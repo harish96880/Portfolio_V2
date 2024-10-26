@@ -3,37 +3,56 @@ import "../index.css";
 
 export default function Button({
   children,
-  width = "auto", // Default to 100% for responsive
-  height = "75px",
-  outlineColor = "#2CF9FC",
-  bgcolor = "linear-gradient(90deg, #09766C 0%, #0F2837 100%)",
-  color = "#C5FFEC",
+  width,
+  height,
+  outlineColor,
+  bgcolor,
+  color,
   logo,
+  fontSize,
+  logoWidth,
 }) {
   const buttonStyle = {
-    width, // Now defaults to 100%
+    width,
     height,
     background: bgcolor,
     border: `1px solid ${outlineColor}`,
     color,
     borderRadius: "42px",
     fontFamily: "Montserrat",
-    fontSize: "2vw",
+    fontSize,
     fontWeight: "400",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
     boxSizing: "border-box",
-    padding: "0 25px 0 25px",
   };
 
   return (
     <button style={buttonStyle}>
-      {logo && <img src={logo} alt="logo" style={{ marginRight: "8px" }} />}{" "}
+      {logo && (
+        <img
+          src={logo}
+          width={logoWidth}
+          height={"60rem"}
+          alt="logo"
+          style={{ marginRight: "8px" }}
+        />
+      )}
       {children}
     </button>
   );
 }
+
+Button.defaultProps = {
+  width: "20rem",
+  height: "4rem",
+  outlineColor: "#2CF9FC",
+  bgcolor: "linear-gradient(90deg, #09766C 0%, #0F2837 100%)",
+  color: "#C5FFEC",
+  fontSize: "1.5rem",
+  logo: null, // Default to null since logo isn't always required
+};
 
 Button.propTypes = {
   children: PropTypes.node.isRequired,
@@ -41,6 +60,8 @@ Button.propTypes = {
   height: PropTypes.string,
   outlineColor: PropTypes.string,
   bgcolor: PropTypes.string,
-  logo: PropTypes.string,
   color: PropTypes.string,
+  logo: PropTypes.string,
+  fontSize: PropTypes.string,
+  logoWidth: PropTypes.string,
 };

@@ -1,11 +1,21 @@
-import Button from "../components/Button";
+// import Button from "../components/Button";
+import Glow from "../components/Glow";
+import HeroSection from "../components/HeroSection";
+import Navbar from "../components/NavbarComponent";
 import "../index.css";
-import chatImage from "../assets/icons/uim_whatsapp.svg";
+// import chatImage from "../assets/icons/uim_whatsapp.svg";
 
 export default function Home() {
   return (
-    <section className="full-vh d-flex align-items-center justify-content-center bg-black">
-      <Button logo={chatImage}>Get in Touch</Button>
-    </section>
+    <>
+      <Glow top={"0"} />
+      <Glow top={"20rem"} left={"80rem"} />
+      <section className="full-vh bg-black">
+        <nav style={{ width: "100%" }}>
+          <Navbar />
+        </nav>
+        <HeroSection />
+      </section>
+    </>
   );
 }

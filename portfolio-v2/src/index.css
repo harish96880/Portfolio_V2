@@ -18,3 +18,58 @@
 .bg-black {
   background-color: #000000; /* Pure black */
 }
+
+/* Base font size */
+html {
+  font-size: 16px;
+}
+
+/* Media query for screens smaller than 992px*/
+@media (max-width: 992px) {
+  html {
+    font-size: 14px; /* Adjust font size for medium screens */
+  }
+}
+
+/* Media query for screens smaller than 576px */
+@media (max-width: 576px) {
+  html {
+    font-size: 10px; /* Adjust font size for small screens */
+  }
+}
+
+.custom-navbar {
+  background-color: transparent;
+  height: 80px; /* Adjust height as needed */
+}
+
+.role-text {
+  color: #b8b8b8;
+  font-family: Montserrat;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.status-indicator {
+  width: 10px;
+  height: 10px;
+  background-color: #2cf9fc;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.glow {
+  position: absolute;
+  width: 40rem;
+  height: 50rem;
+  flex-shrink: 0;
+  border-radius: 245.5px;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 255, 234, 0.475) 0%,
+    #291414 100%
+  );
+  filter: blur(150px);
+}
